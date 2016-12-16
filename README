@@ -13,10 +13,10 @@ Steps to load sample data in Oralce and run cdc & merge to ingest the data throu
 
 1. Check out support_utils project from Github
 2. Run "mvn clean install -DskipTests"
-3. Execute "com.infoworks.SampleDataGenerator" java program to generate a csv file
+3. Execute "infoworks.support.utils.SampleDataGenerator" java program to generate a csv file
 
->java -jar target/support_utils-1.0-SNAPSHOT.jar com.infoworks.SampleDataGenerator -n 30 -y 2016 -s 200 -e 200 
-Usage: com.infoworks.SampleDataGenerator
+>java -jar target/support_utils-1.0-SNAPSHOT.jar infoworks.support.utils.SampleDataGenerator -n 30 -y 2016 -s 200 -e 200 
+Usage: infoworks.support.utils.SampleDataGenerator
        -n --rows   num of rows to generate
        -y --year   which year 
        -s --start  which day of the year to start

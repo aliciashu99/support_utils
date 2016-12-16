@@ -1,4 +1,4 @@
-package com.infoworks;
+package infoworks.support.utils;
 
 import org.apache.commons.cli.*;
 import org.apache.commons.cli.CommandLineParser;
@@ -19,7 +19,7 @@ public class SampleDataGenerator {
         int numOfRows = 700000; //Integer.getInteger(args[1]);
         int year = 2016, startDay = 306, endDay = 335;
 
-        System.out.println("Usage: com.infoworks.SampleDataGenerator");
+        System.out.println("Usage: infoworks.support.utils.SampleDataGenerator");
         System.out.println("       -n --rows   num of rows to generate");
         System.out.println("       -y --year   which year ");
         System.out.println("       -s --start  which day of the year to start");
