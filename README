@@ -1,0 +1,47 @@
+Introduction 
+
+This is the README on how to load sample data into Oracle tables and run Infoworks data ingestion for the tables.
+
+
+Prerequisites:
+
+•	Install SQLDeveloper or other Oracle clients that can talk to Oracle server
+•	Install Infoworks product
+
+
+Steps to load sample data in Oralce and run cdc & merge to ingest the data through Infoworks UI:
+
+1. Check out support_utils project from Github
+2. Run "mvn clean install -DskipTests"
+3. Execute "com.infoworks.SampleDataGenerator" java program to generate a csv file
+
+>java -jar target/support_utils-1.0-SNAPSHOT.jar com.infoworks.SampleDataGenerator -n 30 -y 2016 -s 200 -e 200 
+Usage: com.infoworks.SampleDataGenerator
+       -n --rows   num of rows to generate
+       -y --year   which year 
+       -s --start  which day of the year to start
+       -e --end    which day of the year to end
+       -f --file   (optional) csv output file name
+
+4. Create a table in Oracle
+5. Use SQL Developer and go to the created table.
+6. Right click on the table and choose "Import Data...."
+7. Follow the instructions on the UI to load the generated csv file and import the data.
+8. Create a source and a table group in Infoworks UI
+9. Ingest the data into the created table group using Infoworks UI
+10. Run update statements or script in Oracle to update the table. A sample PL-SQL script:
+
+declare
+  prescrip_id number(20);
+begin
+  FOR i IN 1..1000 LOOP
+    prescrip_id := dbms_random.value(1, 100000);
+    update PHARMACY_CLAIM set description='Version 2.0', update_date=SYSTIMESTAMP where prescription_id=prescrip_id;
+  END LOOP;
+  commit;
+end;
+
+11. Run CDC from Infoworks UI
+12. Run Merge from Infoworks UI
+
+

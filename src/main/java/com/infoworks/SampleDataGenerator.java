@@ -22,9 +22,9 @@ public class SampleDataGenerator {
         System.out.println("Usage: com.infoworks.SampleDataGenerator");
         System.out.println("       -n --rows   num of rows to generate");
         System.out.println("       -y --year   which year ");
-        System.out.println("       -s --start  what day of the year to start");
-        System.out.println("       -e --end    what day of the year to end");
-        System.out.println("       -f --file   csv output file name");
+        System.out.println("       -s --start  which day of the year to start");
+        System.out.println("       -e --end    which day of the year to end");
+        System.out.println("       -f --file   (optional) csv output file name");
         /*    if (args.length > 0) {
             try {
                 numOfRows = Integer.parseInt(args[0]);
