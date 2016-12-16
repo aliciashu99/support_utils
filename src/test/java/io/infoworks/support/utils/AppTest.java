@@ -1,4 +1,4 @@
-package infoworks.support.utils;
+package io.infoworks.support.utils;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

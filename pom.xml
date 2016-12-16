@@ -46,7 +46,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>infoworks.support.utils.SampleDataGenerator</mainClass> 
+              <mainClass>io.infoworks.support.utils.SampleDataGenerator</mainClass>
             </manifest>
           </archive>
         </configuration>
